@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var passport = require('passport');
-//var flash = require('connect-flash');
+var flash = require('connect-flash');
 var session = require('express-session');
 
 
@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: 'iamawesome' })); 
 app.use(passport.initialize());
 app.use(passport.session()); 
-// app.use(flash());
+app.use(flash());
 //------------------------------------------------------------------
 
 app.get('/' , function(req,res){
